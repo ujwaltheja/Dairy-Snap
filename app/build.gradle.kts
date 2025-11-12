@@ -106,8 +106,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
 
-    // Google ML Kit for Speech Recognition
-    implementation("com.google.mlkit:speech-recognition:16.0.0")
+    // Google ML Kit for Translation
+    // Note: Using Android's built-in SpeechRecognizer instead of ML Kit version
     implementation("com.google.mlkit:translate:17.0.2")
 
     // AdMob

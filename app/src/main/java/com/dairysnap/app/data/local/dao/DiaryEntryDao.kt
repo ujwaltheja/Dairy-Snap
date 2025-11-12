@@ -6,6 +6,11 @@ import com.dairysnap.app.data.local.entity.Mood
 import kotlinx.coroutines.flow.Flow
 import java.util.Date
 
+data class DateEntryCount(
+    @ColumnInfo(name = "date") val date: String,
+    @ColumnInfo(name = "count") val count: Int
+)
+
 @Dao
 interface DiaryEntryDao {
 
@@ -65,7 +70,7 @@ interface DiaryEntryDao {
         GROUP BY date
         ORDER BY date DESC
     """)
-    fun getEntriesCountByDate(): Flow<Map<String, Int>>
+    fun getEntriesCountByDate(): Flow<List<DateEntryCount>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEntry(entry: DiaryEntry): Long
