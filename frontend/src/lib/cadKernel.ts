@@ -278,6 +278,7 @@ export const RING_SIZES: Record<string, number> = {
 
 export function mmToRingSize(diameter: number): string {
   const entries = Object.entries(RING_SIZES);
+  if (entries.length === 0) return 'US 7';
   return entries.reduce((prev, curr) =>
     Math.abs(curr[1] - diameter) < Math.abs(prev[1] - diameter) ? curr : prev
   )[0];

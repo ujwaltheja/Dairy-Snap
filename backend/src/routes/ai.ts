@@ -28,7 +28,7 @@ router.post('/suggest', authenticate, (req: AuthRequest, res: Response) => {
 
   const suggestions = [
     { id: uuid(), type: 'warning', message: 'Thin section detected near band junction (0.8 mm). Recommend ≥ 1.2 mm.', confidence: 0.87, action: 'Add reinforcement rib' },
-    { id: uuid(), type: 'optimization', message: 'Prong spacing can be optimised for better gem security.', confidence: 0.73, action: 'Auto-space prongs' },
+    { id: uuid(), type: 'optimization', message: 'Prong spacing can be optimized for better gem security.', confidence: 0.73, action: 'Auto-space prongs' },
     { id: uuid(), type: 'info', message: `Scene has ${count} object(s). Consider grouping related elements.`, confidence: 0.60 },
   ];
 

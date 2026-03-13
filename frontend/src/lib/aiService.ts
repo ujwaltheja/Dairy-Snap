@@ -106,7 +106,7 @@ function mockGenerateDesign(params: GenerateDesignParams): GenerateDesignRespons
 function mockSuggestions(): SuggestResponse {
   const pool = [
     { id: '1', type: 'warning' as const, message: 'Thin section near band junction (0.8 mm). Recommend ≥ 1.2 mm for durability.', confidence: 0.87, action: 'Add reinforcement rib' },
-    { id: '2', type: 'optimization' as const, message: 'Prong spacing can be optimised for better gem security.', confidence: 0.73, action: 'Auto-space prongs' },
+    { id: '2', type: 'optimization' as const, message: 'Prong spacing can be optimized for better gem security.', confidence: 0.73, action: 'Auto-space prongs' },
     { id: '3', type: 'info' as const, message: 'Pavé layout detected — consider micro-set for a sleeker finish.', confidence: 0.65 },
     { id: '4', type: 'warning' as const, message: 'Undercut detected on inner shank. May require extra tooling.', confidence: 0.80, action: 'Add 2° draft angle' },
   ];

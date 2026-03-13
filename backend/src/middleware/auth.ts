@@ -1,7 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET ?? 'ai3design-dev-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET ?? (() => {
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('JWT_SECRET environment variable must be set in production');
+  }
+  return 'ai3design-dev-secret-change-in-production';
+})();
 
 export interface AuthRequest extends Request {
   userId?: string;

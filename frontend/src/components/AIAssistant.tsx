@@ -76,7 +76,7 @@ export default function AIAssistant() {
             onClick={fetchSuggestions}
             className="flex items-center gap-1 text-[11px] text-yellow-400 hover:text-yellow-300 bg-yellow-500/10 hover:bg-yellow-500/20 px-2 py-1 rounded transition-colors"
           >
-            <Lightbulb size={12} /> Analyse
+            <Lightbulb size={12} /> Analyze
           </button>
           <button
             onClick={() => setExpanded((v) => !v)}

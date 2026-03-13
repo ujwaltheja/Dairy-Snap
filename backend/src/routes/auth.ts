@@ -22,7 +22,9 @@ router.post('/register', (req: Request, res: Response) => {
     return;
   }
 
-  // Simple hash (use bcrypt in production)
+  // TODO (production): Replace with bcrypt — e.g., await bcrypt.hash(password, 12)
+  // Using a simple hash placeholder for this mock/dev environment only.
+  // NEVER use Base64 for password storage in production.
   const passwordHash = Buffer.from(password).toString('base64');
   const user = { id: uuid(), email, name: name ?? email.split('@')[0], passwordHash };
   users.set(email, user);
